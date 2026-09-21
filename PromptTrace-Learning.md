@@ -40,3 +40,25 @@ prompt engineering, evaluation, Git, and software development.
 
 #### What I can explain now
 - 
+
+
+## Architecture Understanding
+
+### Main Flow
+
+User → UI → Python Application → LLM API → Response → Storage → Evaluation
+
+### What I Understand
+
+- UI is where the user interacts with PromptTrace.
+- Python controls the application logic.
+- The LLM is accessed through an API.
+- Experiments contain different prompt versions.
+- Responses will be stored for comparison.
+- Evaluation will help compare prompt results.
+
+### My Questions
+
+- No major questions currently.
+- 
+- 
