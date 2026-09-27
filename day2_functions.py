@@ -38,6 +38,21 @@ print(ifelse(score))"""
         return "Needs improvement"
 result = evaluate_experiment(experiment1)
 print(result)"""
+"""
+
+experiments=[experiment1, experiment2]
+
+def evaluate_experiment(experiments):
+    for i in experiments:
+        if i["score"] >=7:
+            print("Good Score")
+        else:
+            print("Needs improvement")
+result=evaluate_experiment(experiments)
+print(result)
+"""
+
+
 
 experiment1={
     "task":"Gen Ai",
@@ -57,12 +72,16 @@ experiment2={
 }
 experiments=[experiment1, experiment2]
 
-def evaluate_experiment(experiments):
-    for i in experiments:
-        if i["score"] >=7:
-            print("Good Score")
-        else:
-            print("Needs improvement")
-result=evaluate_experiment(experiments)
-print(result)
 
+def evaluate_experiment(experiments):
+    result=[]
+    for i in experiments:
+        
+        if i["score"] >= 7:
+            result.append("Good Score")
+        else:
+            result.append("Needs improvement")
+    return result
+
+results = evaluate_experiment(experiments)
+print(results)
