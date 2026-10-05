@@ -351,3 +351,69 @@ Results can be compared
 ### Current Feeling About the Project
 
 At the beginning, the project structure was confusing to me because I was still learning Python. After practicing step by step, I understand the basic flow much better. I am still not fully confident with Python, but now I can write small parts of the project myself and understand what the code is doing.
+
+---
+
+### Day 6
+
+#### What I learned
+
+- Learned how to create a reusable experiment creation function.
+- Learned how to pass multiple values as function parameters.
+- Learned how to create an experiment dictionary using function parameters.
+- Learned how to create multiple experiments using the same function.
+- Learned how to store multiple experiment dictionaries inside a list.
+- Learned how to evaluate multiple experiments using a loop and if/else.
+- Learned how to return evaluation results as a list.
+- Learned how to separate PromptTrace functions into a Python module.
+- Learned how to import and use those functions from another Python file.
+
+#### What I practiced
+
+- Created a `create_experiment()` function with task, prompt, prompt version, model, response, and score parameters.
+- Created two different experiment dictionaries using the same function.
+- Stored the experiments in an `experiments` list.
+- Created an `evaluate_experiments()` function.
+- Used a loop to check the score of each experiment.
+- Used `append()` to store evaluation results.
+- Separated the experiment functions into `experiment.py`.
+- Used `day6_main.py` to import and test the functions.
+
+#### What I built
+
+- Created the first reusable experiment creation component for PromptTrace.
+- Created a basic experiment evaluation component.
+- Organized the experiment-related functions into a separate Python module.
+
+#### What I found confusing
+
+- Initially I was confused about the difference between a function and a dictionary.
+- I mistakenly tried to use a dictionary like a function by writing `experiment()`.
+- I also got confused about function parameters and how values are passed to them.
+- I had some confusion about the difference between `create_experiment()` and `evaluate_experiments()`.
+- I also made a mistake with the function name while importing it from another file.
+
+#### How I solved it
+
+- Practiced the difference between calling a function and returning a dictionary.
+- Learned that `create_experiment()` is a function while `experiment` is a dictionary.
+- Practiced passing values through function parameters.
+- Used the same function to create multiple experiments.
+- Separated functions from the main testing code.
+- Checked the import names carefully when using functions from another module.
+- Used AI as a mentor to understand the mistakes instead of copying the complete solution.
+
+#### AI help used
+
+- Used AI to understand function parameters, return values, reusable functions, and modules.
+- I wrote the code myself and used AI mainly for explanations, hints, debugging, and code review.
+
+#### What I can explain now
+
+- I can create a reusable function with multiple parameters.
+- I can create an experiment dictionary using function parameters.
+- I can create multiple experiments using the same function.
+- I can store multiple experiments in a list.
+- I can evaluate multiple experiments using a loop and if/else.
+- I can return a list of evaluation results.
+- I can separate functions into a module and import them into another Python file.
