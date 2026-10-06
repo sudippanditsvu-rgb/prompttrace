@@ -23,10 +23,14 @@ experiment2 = create_experiment(
 
 experiments = [experiment1, experiment2]
 
-results = evaluate_experiments(experiments)
+"""results = evaluate_experiments(experiments)"""
 
-print(results)
+"""print(results)"""
 
 save_experiments(experiments)
-load_experiments=load_experiments(experiments)
-print(load_experiments)
+
+loaded_experiments = load_experiments()
+
+result = evaluate_experiments(loaded_experiments)
+print(result)
+
