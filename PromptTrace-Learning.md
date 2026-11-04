@@ -1,419 +1,895 @@
 ---
 
-### Day 1
+\### Day 1
 
-#### What I learned
+\#### What I learned
 
-- Learned about Python variables, lists, and dictionaries.
-- Learned how to access values from a dictionary using keys.
-- Learned how to use if/else conditions.
-- Learned how to use a for loop.
-- Understood how a list can contain multiple dictionaries.
+\- Learned about Python variables, lists, and dictionaries.
 
-#### What I practiced
+\- Learned how to access values from a dictionary using keys.
 
-- Created an experiment dictionary for PromptTrace.
-- Stored task, prompt, version, model, response, and score in the dictionary.
-- Created multiple experiments and stored them in a list.
-- Used if/else to check whether an experiment score was good or needed improvement.
-- Used a for loop to process multiple experiments.
+\- Learned how to use if/else conditions.
 
-#### What I built
+\- Learned how to use a for loop.
 
-- Created a basic experiment evaluation logic.
-- Tested multiple experiments with different scores.
+\- Understood how a list can contain multiple dictionaries.
 
-#### What I found confusing
+\#### What I practiced
 
-- Initially I was confused about how to access values inside a dictionary.
-- I also had some confusion about using a for loop with a list of dictionaries.
+\- Created an experiment dictionary for PromptTrace.
 
-#### How I solved it
+\- Stored task, prompt, version, model, response, and score in the
+dictionary.
 
-- Practiced dictionary access using examples.
-- Used the for loop step by step and checked the value of each experiment.
-- Used AI as a mentor when I got stuck and then wrote the code myself.
+\- Created multiple experiments and stored them in a list.
 
-#### AI help used
+\- Used if/else to check whether an experiment score was good or needed
+improvement.
 
-- Used AI to understand Python concepts and debug my mistakes.
-- I wrote the practice code myself and used AI mainly for explanations and review.
+\- Used a for loop to process multiple experiments.
 
-#### What I can explain now
+\#### What I built
 
-- I can explain the difference between a list and a dictionary.
-- I can access dictionary values using keys.
-- I can use if/else and for loops with experiment data.
-- I can store multiple experiment dictionaries inside a list.
+\- Created a basic experiment evaluation logic.
 
----
+\- Tested multiple experiments with different scores.
 
-### Day 2
+\#### What I found confusing
 
-#### What I learned
+\- Initially I was confused about how to access values inside a
+dictionary.
 
-- Learned how to create and use Python functions.
-- Learned about function parameters and return values.
-- Learned how functions can work with dictionaries and lists.
-- Understood why a function returns `None` when it does not return a value.
-- Learned how to use `input()` and convert input into an integer.
+\- I also had some confusion about using a for loop with a list of
+dictionaries.
 
-#### What I practiced
+\#### How I solved it
 
-- Created functions for displaying experiment information.
-- Created a function to calculate/evaluate scores.
-- Created an evaluation function for multiple experiments.
-- Used a list to store evaluation results.
+\- Practiced dictionary access using examples.
 
-#### What I built
+\- Used the for loop step by step and checked the value of each
+experiment.
 
-- Created a basic PromptTrace experiment evaluation function.
-- Tested multiple experiments and returned results such as `Good Score` and `Needs improvement`.
+\- Used AI as a mentor when I got stuck and then wrote the code myself.
 
-#### What I found confusing
+\#### AI help used
 
-- At first I was confused about the difference between `print()` and `return`.
-- I also made a mistake by creating the result list inside the loop, which caused the list to reset.
+\- Used AI to understand Python concepts and debug my mistakes.
 
-#### How I solved it
+\- I wrote the practice code myself and used AI mainly for explanations
+and review.
 
-- Practiced how `return` sends a value back from a function.
-- Moved the result list outside the loop so all experiment results could be stored.
-- Tested the function with two different experiments.
+\#### What I can explain now
 
-#### AI help used
+\- I can explain the difference between a list and a dictionary.
 
-- Used AI to understand errors and get hints.
-- I tried writing the functions myself instead of directly copying the complete solution.
+\- I can access dictionary values using keys.
 
-#### What I can explain now
+\- I can use if/else and for loops with experiment data.
 
-- I can create a function with parameters.
-- I understand how `return` works.
-- I can use functions with lists and dictionaries.
-- I can process multiple experiments using a loop inside a function.
+\- I can store multiple experiment dictionaries inside a list.
 
 ---
 
-### Day 3
+**\### Day 2**
 
-#### What I learned
+**\#### What I learned**
 
-- Learned why data needs to be stored in a file instead of only keeping it in Python memory.
-- Learned about JSON and how it can store structured data.
-- Learned the difference between `"w"` and `"r"` file modes.
-- Learned `json.dump()` and `json.load()`.
-- Learned how to save and load a list of dictionaries.
+\- Learned how to create and use Python functions.
 
-#### What I practiced
+\- Learned about function parameters and return values.
 
-- Created an `experiment.json` file.
-- Saved PromptTrace experiment data into the JSON file.
-- Used `indent=4` to make the JSON file easier to read.
-- Loaded the JSON data back into Python.
-- Used the loaded data with my experiment evaluation function.
+\- Learned how functions can work with dictionaries and lists.
 
-#### What I built
+\- Understood why a function returns \`None\` when it does not return a
+value.
 
-- Created a basic JSON storage system for PromptTrace.
-- Saved multiple experiments in `experiment.json`.
-- Loaded the experiments again and checked their scores.
+\- Learned how to use \`input()\` and convert input into an integer.
 
-#### What I found confusing
+**\#### What I practiced**
 
-- Initially I used `"w"` mode while trying to load the JSON file.
-- I was also confused about where `json.dump()` and `json.load()` should be used.
+\- Created functions for displaying experiment information.
 
-#### How I solved it
+\- Created a function to calculate/evaluate scores.
 
-- Understood that `"w"` means write and `"r"` means read.
-- Learned that `json.dump()` is used for saving Python data to JSON.
-- Learned that `json.load()` is used for loading JSON data back into Python.
-- Practiced saving and loading the experiments until the output was correct.
+\- Created an evaluation function for multiple experiments.
 
-#### AI help used
+\- Used a list to store evaluation results.
 
-- Used AI to understand JSON concepts and fix mistakes.
-- I wrote the code myself and used AI to review my code and explain errors.
+**\#### What I built**
 
-#### What I can explain now
+\- Created a basic PromptTrace experiment evaluation function.
 
-- I can explain what JSON is and why it is useful.
-- I can save Python dictionaries/lists to a JSON file.
-- I can load JSON data back into Python.
-- I can use loaded experiment data with functions and loops.
-- I understand the basic data flow of PromptTrace storage.
+\- Tested multiple experiments and returned results such as \`Good
+Score\` and \`Needs improvement\`.
 
----
+**\#### What I found confusing**
 
-## Current Understanding
+\- At first I was confused about the difference between \`print()\` and
+\`return\`.
+
+\- I also made a mistake by creating the result list inside the loop,
+which caused the list to reset.
+
+**\#### How I solved it**
+
+\- Practiced how \`return\` sends a value back from a function.
+
+\- Moved the result list outside the loop so all experiment results
+could be stored.
+
+\- Tested the function with two different experiments.
+
+**\#### AI help used**
+
+\- Used AI to understand errors and get hints.
+
+\- I tried writing the functions myself instead of directly copying the
+complete solution.
+
+**\#### What I can explain now**
+
+\- I can create a function with parameters.
+
+\- I understand how \`return\` works.
+
+\- I can use functions with lists and dictionaries.
+
+\- I can process multiple experiments using a loop inside a function.
+
+**---**
+
+**\### Day 3**
+
+**\#### What I learned**
+
+\- Learned why data needs to be stored in a file instead of only keeping
+it in Python memory.
+
+\- Learned about JSON and how it can store structured data.
+
+\- Learned the difference between \`"w"\` and \`"r"\` file modes.
+
+\- Learned \`json.dump()\` and \`json.load()\`.
+
+\- Learned how to save and load a list of dictionaries.
+
+**\#### What I practiced**
+
+\- Created an \`experiment.json\` file.
+
+\- Saved PromptTrace experiment data into the JSON file.
+
+\- Used \`indent=4\` to make the JSON file easier to read.
+
+\- Loaded the JSON data back into Python.
+
+\- Used the loaded data with my experiment evaluation function.
+
+**\#### What I built**
+
+\- Created a basic JSON storage system for PromptTrace.
+
+\- Saved multiple experiments in \`experiment.json\`.
+
+\- Loaded the experiments again and checked their scores.
+
+**\#### What I found confusing**
+
+\- Initially I used \`"w"\` mode while trying to load the JSON file.
+
+\- I was also confused about where \`json.dump()\` and \`json.load()\`
+should be used.
+
+**\#### How I solved it**
+
+\- Understood that \`"w"\` means write and \`"r"\` means read.
+
+\- Learned that \`json.dump()\` is used for saving Python data to JSON.
+
+\- Learned that \`json.load()\` is used for loading JSON data back into
+Python.
+
+\- Practiced saving and loading the experiments until the output was
+correct.
+
+**\#### AI help used**
+
+\- Used AI to understand JSON concepts and fix mistakes.
+
+\- I wrote the code myself and used AI to review my code and explain
+errors.
+
+**\#### What I can explain now**
+
+\- I can explain what JSON is and why it is useful.
+
+\- I can save Python dictionaries/lists to a JSON file.
+
+\- I can load JSON data back into Python.
+
+\- I can use loaded experiment data with functions and loops.
+
+\- I understand the basic data flow of PromptTrace storage.
+
+**---**
+
+**\## Current Understanding**
+
+**\### PromptTrace Data Flow**
+
+User creates experiment  
+
+↓  
+
+Python stores experiment data  
+
+↓  
+
+Experiments are saved in JSON  
+
+↓  
+
+JSON data can be loaded again  
+
+↓  
+
+Python evaluates the experiments  
+
+↓  
+
+Results can be compared
+
+**\### My Current Skills**
+
+\- Python basics
+
+\- Lists
+
+\- Dictionaries
+
+\- If/else
+
+\- For loops
+
+\- Functions
+
+\- Parameters
+
+\- Return values
+
+\- File handling basics
+
+\- JSON
+
+\- \`json.dump()\`
+
+\- \`json.load()\`
+
+\- Basic experiment evaluation
+
+\- Git and GitHub basics
+
+**\### Things I Still Need to Learn**
+
+\- Error handling
+
+\- Working with APIs
+
+\- Calling an LLM API
+
+\- Prompt version management
+
+\- Better evaluation methods
+
+\- Streamlit UI
+
+\- SQLite/database basics
+
+\- Connecting all components into the final PromptTrace application
+
+**\### Current Feeling About the Project**
+
+At the beginning, the project structure was confusing to me because I
+was still learning Python. After practicing step by step, I understand
+the basic flow much better. I am still not fully confident with Python,
+but now I can write small parts of the project myself and understand
+what the code is doing.
+
+**---**
+
+**\### Day 4**
+
+**\#### What I learned**
+
+\- Learned how to handle errors using \`try/except\`.
+
+\- Learned about \`ValueError\` when converting invalid input to an
+integer.
+
+\- Learned about \`KeyError\` when a dictionary key does not exist.
+
+\- Understood that when an error occurs inside a \`try\` block, Python
+stops the remaining code in that block and moves to the matching
+\`except\`.
+
+\- Learned that different errors can be handled with different
+\`except\` blocks.
+
+**\#### What I practiced**
+
+\- Created a \`safe_score()\` function.
+
+\- Used \`int()\` inside \`try/except\`.
+
+\- Tested valid numbers and invalid values such as \`"abc"\`.
+
+\- Tested missing dictionary keys.
+
+\- Practiced handling both \`ValueError\` and \`KeyError\`.
+
+**\#### What I built**
+
+\- Created basic safe score handling for PromptTrace experiment data.
+
+\- Practiced handling missing or invalid experiment scores.
+
+**\#### What I found confusing**
+
+\- Initially I was confused about why \`ValueError\` happens when using
+\`int()\`.
+
+\- I also expected multiple errors to appear at the same time.
+
+\- I was confused about the difference between \`KeyError\` and
+\`ValueError\`.
+
+**\#### How I solved it**
+
+\- Learned that \`input()\` normally returns a string.
+
+\- Practiced converting values using \`int()\`.
+
+\- Learned that \`int("abc")\` causes \`ValueError\`.
+
+\- Learned that accessing a missing dictionary key causes \`KeyError\`.
+
+\- Understood that the first error stops the current \`try\` block.
+
+**\#### AI help used**
+
+\- Used AI to understand error handling and debug my mistakes.
+
+\- I wrote the code myself and used AI mainly for explanations, hints,
+and review.
+
+**\#### What I can explain now**
+
+\- I can explain the basic purpose of \`try/except\`.
+
+\- I understand \`ValueError\` and \`KeyError\`.
+
+\- I can handle different errors separately.
+
+\- I understand why execution stops at the first error inside a \`try\`
+block.
+
+**---**
+
+**\### Day 5**
+
+**\#### What I learned**
+
+\- Learned what Python modules are.
+
+\- Learned how to import functions from another Python file.
+
+\- Learned why separating code into different files makes a project
+easier to organize.
+
+\- Practiced the difference between \`print()\` and \`return\`.
+
+\- Learned how returned values can be stored in variables and reused.
+
+\- Learned how to create reusable functions.
+
+**\#### What I practiced**
+
+\- Created a \`score_utils.py\` module.
+
+\- Created a \`day5_main.py\` file to use functions from the module.
+
+\- Imported functions using \`from ... import ...\`.
+
+\- Created an \`evaluate_score()\` function.
+
+\- Used \`return\` instead of only printing results.
+
+\- Tested functions with different scores.
+
+**\#### What I built**
+
+\- Created a small reusable score evaluation module for PromptTrace.
+
+\- Connected the module with a separate Python file.
+
+**\#### What I found confusing**
+
+\- Initially I was confused about why \`print()\` and \`return\` behave
+differently.
+
+\- I also had some confusion about why a function returns \`None\` when
+it only uses \`print()\`.
+
+**\#### How I solved it**
+
+\- Practiced storing returned values in variables.
+
+\- Compared functions using \`print()\` with functions using \`return\`.
+
+\- Used the returned evaluation result in another part of the program.
+
+\- Practiced importing functions from another module.
+
+**\#### AI help used**
+
+\- Used AI as a mentor to understand modules, imports, reusable
+functions, and \`return\`.
+
+\- I wrote the code myself and used AI to explain concepts and review my
+implementation.
+
+**\#### What I can explain now**
+
+\- I can explain what a Python module is.
+
+\- I can import a function from another Python file.
+
+\- I understand the difference between \`print()\` and \`return\`.
+
+\- I can create and use reusable functions.
+
+\- I understand why separating code into modules is useful for a larger
+project.
+
+**---**
+
+**\## Current Understanding**
+
+**\### PromptTrace Data Flow**
+
+User creates experiment  
+
+↓  
+
+Python stores experiment data  
+
+↓  
+
+Experiments are saved in JSON  
+
+↓  
+
+JSON data can be loaded again  
+
+↓  
+
+Python evaluates the experiments  
+
+↓  
+
+Results can be compared
+
+**\### My Current Skills**
+
+\- Python basics
+
+\- Lists
+
+\- Dictionaries
+
+\- If/else
+
+\- For loops
+
+\- Functions
+
+\- Parameters
+
+\- Return values
+
+\- File handling basics
+
+\- JSON
+
+\- \`json.dump()\`
+
+\- \`json.load()\`
+
+\- Error handling
+
+\- \`try/except\`
+
+\- \`ValueError\`
+
+\- \`KeyError\`
+
+\- Python modules
+
+\- Imports
+
+\- Reusable functions
+
+\- Git and GitHub basics
+
+**\### Things I Still Need to Learn**
+
+\- Working with APIs
+
+\- Calling an LLM API
+
+\- Prompt version management
+
+\- Better evaluation methods
+
+\- Streamlit UI
+
+\- SQLite/database basics
+
+\- Connecting all components into the final PromptTrace application
+
+**\### Current Feeling About the Project**
+
+At the beginning, the project structure was confusing to me because I
+was still learning Python. After practicing step by step, I understand
+the basic flow much better. I am still not fully confident with Python,
+but now I can write small parts of the project myself and understand
+what the code is doing.
+
+**---**
+
+**\### Day 6**
+
+**\#### What I learned**
+
+\- Learned how to create a reusable experiment creation function.
+
+\- Learned how to pass multiple values as function parameters.
+
+\- Learned how to create an experiment dictionary using function
+parameters.
+
+\- Learned how to create multiple experiments using the same function.
+
+\- Learned how to store multiple experiment dictionaries inside a list.
+
+\- Learned how to evaluate multiple experiments using a loop and
+if/else.
+
+\- Learned how to return evaluation results as a list.
+
+\- Learned how to separate PromptTrace functions into a Python module.
+
+\- Learned how to import and use those functions from another Python
+file.
+
+**\#### What I practiced**
+
+\- Created a \`create_experiment()\` function with task, prompt, prompt
+version, model, response, and score parameters.
+
+\- Created two different experiment dictionaries using the same
+function.
+
+\- Stored the experiments in an \`experiments\` list.
+
+\- Created an \`evaluate_experiments()\` function.
+
+\- Used a loop to check the score of each experiment.
+
+\- Used \`append()\` to store evaluation results.
+
+\- Separated the experiment functions into \`experiment.py\`.
+
+\- Used \`day6_main.py\` to import and test the functions.
+
+**\#### What I built**
+
+\- Created the first reusable experiment creation component for
+PromptTrace.
+
+\- Created a basic experiment evaluation component.
+
+\- Organized the experiment-related functions into a separate Python
+module.
+
+**\#### What I found confusing**
+
+\- Initially I was confused about the difference between a function and
+a dictionary.
+
+\- I mistakenly tried to use a dictionary like a function by writing
+\`experiment()\`.
+
+\- I also got confused about function parameters and how values are
+passed to them.
+
+\- I had some confusion about the difference between
+\`create_experiment()\` and \`evaluate_experiments()\`.
+
+\- I also made a mistake with the function name while importing it from
+another file.
+
+**\#### How I solved it**
+
+\- Practiced the difference between calling a function and returning a
+dictionary.
+
+\- Learned that \`create_experiment()\` is a function while
+\`experiment\` is a dictionary.
+
+\- Practiced passing values through function parameters.
+
+\- Used the same function to create multiple experiments.
+
+\- Separated functions from the main testing code.
+
+\- Checked the import names carefully when using functions from another
+module.
+
+\- Used AI as a mentor to understand the mistakes instead of copying the
+complete solution.
+
+**\#### AI help used**
+
+\- Used AI to understand function parameters, return values, reusable
+functions, and modules.
+
+\- I wrote the code myself and used AI mainly for explanations, hints,
+debugging, and code review.
+
+**\#### What I can explain now**
+
+\- I can create a reusable function with multiple parameters.
+
+\- I can create an experiment dictionary using function parameters.
+
+\- I can create multiple experiments using the same function.
+
+\- I can store multiple experiments in a list.
+
+\- I can evaluate multiple experiments using a loop and if/else.
+
+\- I can return a list of evaluation results.
+
+\- I can separate functions into a module and import them into another
+Python file.
+
+------------------------------------------------------------------------
+
+## Day 7
+
+### What I learned
+
+-   Learned how to organize experiment data storage in a separate Python
+    module.
+-   Learned how to save experiments to a JSON file using `json.dump()`.
+-   Learned how to load saved experiments using `json.load()`.
+-   Practiced using loaded experiment data in the evaluation function.
+-   Learned why a separate variable such as `loaded_experiments` is
+    clearer than reusing a function name.
+
+### What I practiced
+
+-   Created `storage.py`.
+-   Created `save_experiments()` to save a list of experiment
+    dictionaries to `experiments.json`.
+-   Created `load_experiments()` to read the saved experiments.
+-   Imported storage functions into `day6_main.py`.
+-   Saved experiments, loaded them again, and evaluated the loaded data.
+
+### What I built
+
+-   Created a basic reusable JSON storage module for PromptTrace.
+-   Connected experiment creation, saving, loading, and evaluation in
+    the main testing file.
+
+### What I found confusing
+
+-   Initially, I was confused about how to call `save_experiments()` and
+    `load_experiments()` from the main file.
+-   I also used a variable name that was too similar to the
+    `load_experiments()` function.
+
+### How I solved it
+
+-   Practiced importing the storage functions from `storage.py`.
+-   Used `loaded_experiments` to store the data returned by
+    `load_experiments()`.
+-   Tested the complete save-load-evaluate flow and checked the output.
+
+### AI help used
+
+-   Used AI to understand JSON storage, imports, and the order of
+    operations.
+-   I ran the code myself and used AI to explain errors and review the
+    implementation.
+
+### What I can explain now
+
+-   I can save experiment data to a JSON file.
+-   I can load saved data back into Python.
+-   I can pass loaded experiments to an evaluation function.
+-   I understand the basic flow between `day6_main.py`, `experiment.py`,
+    and `storage.py`.
+
+------------------------------------------------------------------------
+
+## Day 8
+
+### What I learned
+
+-   Learned how to prepare a Python project for calling the Gemini API.
+-   Learned how to load an API key from `.env` using `python-dotenv`.
+-   Learned why an API key should be kept out of source code and not
+    shared.
+-   Created an `llm.py` module to keep the Gemini client and
+    response-generation function separate from the main program.
+-   Learned that API requests can fail even when the key is loaded and
+    the Python code reaches the API.
+-   Learned about the `503 UNAVAILABLE` response and that it can
+    indicate temporary service overload.
+-   Practiced adding retry handling with delays after API errors.
+-   Learned to test project components with temporary responses when the
+    external API is unavailable.
+
+### What I practiced
+
+-   Installed and imported `google-genai` and `python-dotenv`.
+-   Loaded `GEMINI_API_KEY` from `.env`.
+-   Created a Gemini client in `llm.py`.
+-   Created a `generate_response()` function for sending a prompt to
+    Gemini.
+-   Called the function from `day6_main.py`.
+-   Added retry attempts with delays for API errors.
+-   Temporarily bypassed the Gemini call and used sample responses to
+    test the experiment workflow.
+
+### What I built
+
+-   Created the initial Gemini API integration module, `llm.py`.
+-   Connected the main testing file to `generate_response()`.
+-   Added basic retry handling for API errors.
+-   Verified that experiment creation, JSON saving, JSON loading, and
+    score-based evaluation still work without a successful Gemini
+    response.
+
+### What I found confusing
+
+-   Initially, I was unsure whether the API error meant my API key or
+    Python code was incorrect.
+-   Gemini returned `503 UNAVAILABLE` repeatedly because the model was
+    experiencing high demand.
+-   I was also learning how to keep API-related code separate from
+    experiment and storage code.
+
+### How I solved it
+
+-   Checked that the API key was successfully loaded from `.env`.
+-   Ran the Gemini request and read the returned error message.
+-   Added retry attempts with 2-second and 4-second delays.
+-   Since the service continued returning `503`, I temporarily used
+    sample responses to test the local project workflow.
+-   Confirmed that the experiments were saved and loaded and that
+    evaluation returned `Good Score` and `Needs Improvement`.
+
+### AI help used
+
+-   Used AI as a mentor to set up the API module, understand the `503`
+    error, and add retry handling.
+-   I ran the code and checked the output myself.
+-   Used temporary sample responses only to test the local workflow
+    while the API was unavailable.
+
+### What I can explain now
+
+-   I can load an API key from an environment file.
+-   I understand the purpose of keeping API code in a separate module.
+-   I can call a response-generation function from the main Python file.
+-   I understand that retry logic can make another attempt after a
+    temporary API error, but it cannot guarantee that the service will
+    become available.
+-   I can test experiment creation, JSON storage, loading, and
+    evaluation without relying on a live API response.
+
+### Day 8 project status
+
+The Gemini integration has been prepared, but a real response was not
+successfully generated during this session because the API returned
+`503 UNAVAILABLE` on repeated attempts. The local experiment workflow
+was successfully tested using temporary sample responses.
+
+The evaluation scores `9` and `2` are currently manually supplied test
+values. They are not scores generated by Gemini or an automated
+response-quality evaluator.
+
+### Next goal
+
+-   Make API error handling clearer.
+-   Add an explicit test/offline mode instead of manually replacing API
+    code.
+-   Integrate real Gemini responses into experiment creation when the
+    API is available.
+-   Keep sample responses and manual scores clearly labeled as test
+    data.
+-   Later, build a more meaningful response evaluation method.
+
+------------------------------------------------------------------------
+
+## Updated Current Understanding
 
 ### PromptTrace Data Flow
 
-User creates experiment  
-↓  
-Python stores experiment data  
-↓  
-Experiments are saved in JSON  
-↓  
-JSON data can be loaded again  
-↓  
-Python evaluates the experiments  
-↓  
-Results can be compared
+User creates a prompt experiment
+
+↓
+
+Python creates experiment data
+
+↓
+
+`llm.py` can request a response from Gemini
+
+↓
+
+Experiment data is saved to JSON using `storage.py`
+
+↓
+
+Saved experiments can be loaded again
+
+↓
+
+`experiment.py` evaluates the currently stored score
+
+↓
+
+Results can be reviewed and compared
 
 ### My Current Skills
 
-- Python basics
-- Lists
-- Dictionaries
-- If/else
-- For loops
-- Functions
-- Parameters
-- Return values
-- File handling basics
-- JSON
-- `json.dump()`
-- `json.load()`
-- Basic experiment evaluation
-- Git and GitHub basics
+-   Python basics
+-   Lists and dictionaries
+-   If/else conditions
+-   For loops
+-   Functions, parameters, and return values
+-   File handling basics
+-   JSON
+-   `json.dump()` and `json.load()`
+-   Basic error handling with `try/except`
+-   `ValueError` and `KeyError`
+-   Python modules and imports
+-   Reusable functions
+-   Basic API setup
+-   Environment variables and `.env`
+-   Gemini client setup
+-   Basic retry handling
+-   Git and GitHub basics
 
 ### Things I Still Need to Learn
 
-- Error handling
-- Working with APIs
-- Calling an LLM API
-- Prompt version management
-- Better evaluation methods
-- Streamlit UI
-- SQLite/database basics
-- Connecting all components into the final PromptTrace application
+-   Reliable API error handling and offline/test mode
+-   Calling an LLM API and storing real responses
+-   Prompt version management
+-   Better evaluation methods
+-   Streamlit UI
+-   SQLite/database basics
+-   Connecting all components into the final PromptTrace application
 
 ### Current Feeling About the Project
 
-At the beginning, the project structure was confusing to me because I was still learning Python. After practicing step by step, I understand the basic flow much better. I am still not fully confident with Python, but now I can write small parts of the project myself and understand what the code is doing.
-
----
-
-### Day 4
-
-#### What I learned
-
-- Learned how to handle errors using `try/except`.
-- Learned about `ValueError` when converting invalid input to an integer.
-- Learned about `KeyError` when a dictionary key does not exist.
-- Understood that when an error occurs inside a `try` block, Python stops the remaining code in that block and moves to the matching `except`.
-- Learned that different errors can be handled with different `except` blocks.
-
-#### What I practiced
-
-- Created a `safe_score()` function.
-- Used `int()` inside `try/except`.
-- Tested valid numbers and invalid values such as `"abc"`.
-- Tested missing dictionary keys.
-- Practiced handling both `ValueError` and `KeyError`.
-
-#### What I built
-
-- Created basic safe score handling for PromptTrace experiment data.
-- Practiced handling missing or invalid experiment scores.
-
-#### What I found confusing
-
-- Initially I was confused about why `ValueError` happens when using `int()`.
-- I also expected multiple errors to appear at the same time.
-- I was confused about the difference between `KeyError` and `ValueError`.
-
-#### How I solved it
-
-- Learned that `input()` normally returns a string.
-- Practiced converting values using `int()`.
-- Learned that `int("abc")` causes `ValueError`.
-- Learned that accessing a missing dictionary key causes `KeyError`.
-- Understood that the first error stops the current `try` block.
-
-#### AI help used
-
-- Used AI to understand error handling and debug my mistakes.
-- I wrote the code myself and used AI mainly for explanations, hints, and review.
-
-#### What I can explain now
-
-- I can explain the basic purpose of `try/except`.
-- I understand `ValueError` and `KeyError`.
-- I can handle different errors separately.
-- I understand why execution stops at the first error inside a `try` block.
-
----
-
-### Day 5
-
-#### What I learned
-
-- Learned what Python modules are.
-- Learned how to import functions from another Python file.
-- Learned why separating code into different files makes a project easier to organize.
-- Practiced the difference between `print()` and `return`.
-- Learned how returned values can be stored in variables and reused.
-- Learned how to create reusable functions.
-
-#### What I practiced
-
-- Created a `score_utils.py` module.
-- Created a `day5_main.py` file to use functions from the module.
-- Imported functions using `from ... import ...`.
-- Created an `evaluate_score()` function.
-- Used `return` instead of only printing results.
-- Tested functions with different scores.
-
-#### What I built
-
-- Created a small reusable score evaluation module for PromptTrace.
-- Connected the module with a separate Python file.
-
-#### What I found confusing
-
-- Initially I was confused about why `print()` and `return` behave differently.
-- I also had some confusion about why a function returns `None` when it only uses `print()`.
-
-#### How I solved it
-
-- Practiced storing returned values in variables.
-- Compared functions using `print()` with functions using `return`.
-- Used the returned evaluation result in another part of the program.
-- Practiced importing functions from another module.
-
-#### AI help used
-
-- Used AI as a mentor to understand modules, imports, reusable functions, and `return`.
-- I wrote the code myself and used AI to explain concepts and review my implementation.
-
-#### What I can explain now
-
-- I can explain what a Python module is.
-- I can import a function from another Python file.
-- I understand the difference between `print()` and `return`.
-- I can create and use reusable functions.
-- I understand why separating code into modules is useful for a larger project.
-
----
-
-## Current Understanding
-
-### PromptTrace Data Flow
-
-User creates experiment  
-↓  
-Python stores experiment data  
-↓  
-Experiments are saved in JSON  
-↓  
-JSON data can be loaded again  
-↓  
-Python evaluates the experiments  
-↓  
-Results can be compared
-
-### My Current Skills
-
-- Python basics
-- Lists
-- Dictionaries
-- If/else
-- For loops
-- Functions
-- Parameters
-- Return values
-- File handling basics
-- JSON
-- `json.dump()`
-- `json.load()`
-- Error handling
-- `try/except`
-- `ValueError`
-- `KeyError`
-- Python modules
-- Imports
-- Reusable functions
-- Git and GitHub basics
-
-### Things I Still Need to Learn
-
-- Working with APIs
-- Calling an LLM API
-- Prompt version management
-- Better evaluation methods
-- Streamlit UI
-- SQLite/database basics
-- Connecting all components into the final PromptTrace application
-
-### Current Feeling About the Project
-
-At the beginning, the project structure was confusing to me because I was still learning Python. After practicing step by step, I understand the basic flow much better. I am still not fully confident with Python, but now I can write small parts of the project myself and understand what the code is doing.
-
----
-
-### Day 6
-
-#### What I learned
-
-- Learned how to create a reusable experiment creation function.
-- Learned how to pass multiple values as function parameters.
-- Learned how to create an experiment dictionary using function parameters.
-- Learned how to create multiple experiments using the same function.
-- Learned how to store multiple experiment dictionaries inside a list.
-- Learned how to evaluate multiple experiments using a loop and if/else.
-- Learned how to return evaluation results as a list.
-- Learned how to separate PromptTrace functions into a Python module.
-- Learned how to import and use those functions from another Python file.
-
-#### What I practiced
-
-- Created a `create_experiment()` function with task, prompt, prompt version, model, response, and score parameters.
-- Created two different experiment dictionaries using the same function.
-- Stored the experiments in an `experiments` list.
-- Created an `evaluate_experiments()` function.
-- Used a loop to check the score of each experiment.
-- Used `append()` to store evaluation results.
-- Separated the experiment functions into `experiment.py`.
-- Used `day6_main.py` to import and test the functions.
-
-#### What I built
-
-- Created the first reusable experiment creation component for PromptTrace.
-- Created a basic experiment evaluation component.
-- Organized the experiment-related functions into a separate Python module.
-
-#### What I found confusing
-
-- Initially I was confused about the difference between a function and a dictionary.
-- I mistakenly tried to use a dictionary like a function by writing `experiment()`.
-- I also got confused about function parameters and how values are passed to them.
-- I had some confusion about the difference between `create_experiment()` and `evaluate_experiments()`.
-- I also made a mistake with the function name while importing it from another file.
-
-#### How I solved it
-
-- Practiced the difference between calling a function and returning a dictionary.
-- Learned that `create_experiment()` is a function while `experiment` is a dictionary.
-- Practiced passing values through function parameters.
-- Used the same function to create multiple experiments.
-- Separated functions from the main testing code.
-- Checked the import names carefully when using functions from another module.
-- Used AI as a mentor to understand the mistakes instead of copying the complete solution.
-
-#### AI help used
-
-- Used AI to understand function parameters, return values, reusable functions, and modules.
-- I wrote the code myself and used AI mainly for explanations, hints, debugging, and code review.
-
-#### What I can explain now
-
-- I can create a reusable function with multiple parameters.
-- I can create an experiment dictionary using function parameters.
-- I can create multiple experiments using the same function.
-- I can store multiple experiments in a list.
-- I can evaluate multiple experiments using a loop and if/else.
-- I can return a list of evaluation results.
-- I can separate functions into a module and import them into another Python file.
+I understand the basic PromptTrace flow better after building experiment
+creation, evaluation, JSON storage, and the initial Gemini API module.
+The Gemini service returned repeated `503 UNAVAILABLE` errors, so I used
+temporary sample responses to verify the local workflow. I am still
+learning, but I can now connect modules, run tests, inspect errors, and
+understand more of the project structure step by step.
