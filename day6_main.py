@@ -1,39 +1,44 @@
 
 from experiment import evaluate_experiments, create_experiment
 from storage import save_experiments, load_experiments
+from llm import generate_response
 
 
-# Temporary responses for testing
-response_v1 = "Generative AI creates new content using learned patterns."
-response_v2 = "Generative AI can create text, images, and other content."
+# Create prompt
+prompt = "Explain Generative AI in simple words."
 
 
-# Create experiments
+# Generate actual AI response
+try:
+    response = generate_response(prompt)
+
+    print("\nGemini Response:")
+    print(response)
+
+except Exception as e:
+    print("\nFailed to generate response:")
+    print(e)
+
+    raise
+
+
+# Create experiment
 experiment1 = create_experiment(
     "Gen AI",
-    "Explain Generative AI in simple words.",
+    prompt,
     "v1",
     "Gemini",
-    response_v1,
+    response,
     9
 )
 
-experiment2 = create_experiment(
-    "Gen AI",
-    "Explain Generative AI with an example.",
-    "v2",
-    "Gemini",
-    response_v2,
-    2
-)
 
-
-# Store experiments
-experiments = [experiment1, experiment2]
+# Store experiment
+experiments = [experiment1]
 
 save_experiments(experiments)
 
-print("Experiments saved successfully!")
+print("\nExperiment saved successfully!")
 
 
 # Load experiments
