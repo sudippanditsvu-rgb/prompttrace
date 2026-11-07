@@ -4,15 +4,7 @@
         "prompt": "Explain Generative AI in simple words.",
         "prompt_version": "v1",
         "model": "Gemini",
-        "response": "Generative AI creates new content using learned patterns.",
+        "response": "**Generative AI** is a type of artificial intelligence that can **create new things** from scratch. \n\nInstead of just organizing information or answering simple questions, it acts like a creative assistant. You give it an instruction (a \"prompt\"), and it can make:\n\n*   **Words:** Write stories, poems, emails, or essays (like ChatGPT).\n*   **Pictures:** Draw art, design logos, or create realistic photos (like Midjourney).\n*   **Audio:** Compose music or mimic human voices.\n*   **Code:** Write computer programs.\n\n---\n\n### The Best Way to Think About It: The \"Super-Autocomplete\"\n\nYou know how your phone tries to guess the next word when you are texting? \n\nGenerative AI is like that, but on a massive scale:\n1. It has \"read\" almost the entire internet and \"looked\" at millions of pictures.\n2. It learned the **patterns** of how humans write, draw, and communicate.\n3. When you ask it to create something, it uses those patterns to guess what should come next, piece by piece, until it builds something brand new.\n\n### Traditional AI vs. Generative AI\n\n*   **Traditional AI is like an Inspector:** You show it a picture of a dog, and it says: *\"Yes, that is a dog.\"* (It analyzes).\n*   **Generative AI is like an Artist:** You tell it: *\"Draw a dog wearing a spacesuit on Mars,\"* and it creates that picture out of thin air. (It creates).\n\n**In short:** Traditional AI *recognizes* things, but Generative AI *makes* things.",
         "score": 9
-    },
-    {
-        "task": "Gen AI",
-        "prompt": "Explain Generative AI with an example.",
-        "prompt_version": "v2",
-        "model": "Gemini",
-        "response": "Generative AI can create text, images, and other content.",
-        "score": 2
     }
 ]
