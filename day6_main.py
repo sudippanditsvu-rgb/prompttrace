@@ -50,3 +50,6 @@ result = evaluate_experiments(loaded_experiments)
 
 print("\nEvaluation Results:")
 print(result)
+
+print("\nLoaded Experiments:")
+print(loaded_experiments)
