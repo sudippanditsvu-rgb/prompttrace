@@ -14,5 +14,13 @@
         "model": "Gemini",
         "response": "**Generative AI** is a type of artificial intelligence that can **create brand-new things**. \n\nWhile older computer programs could only follow strict rules or search for existing information (like a Google search), Generative AI works more like a creative human. It learns from millions of examples of text, pictures, or sounds, and then uses that knowledge to make something completely new when you ask it to.\n\n---\n\n### A Simple Real-Life Example: The Bedtime Storyteller\n\nImagine you want to tell your child a bedtime story, but you are completely out of ideas. \n\n1. **You ask the AI:** *\"Write a 2-minute funny bedtime story about a dinosaur who is afraid of mice and loves to bake cookies.\"*\n2. **The Generative AI creates:** In just five seconds, it writes a brand-new, unique story about \"Barnaby the T-Rex,\" his tiny whisk, and his silly fear of mice. \n\nIt didn't just copy and paste an old story from a book; **it invented a new one just for you on the spot.**\n\n---\n\n**In short:** \n* **Normal AI** acts like a *librarian* (it finds things that already exist).\n* **Generative AI** acts like an *artist or writer* (it creates things that never existed before).",
         "score": 9
+    },
+    {
+        "task": "Duplicate Test",
+        "prompt": "Test duplicate prevention",
+        "prompt_version": "v3",
+        "model": "Test",
+        "response": "Testing duplicate prevention",
+        "score": 5
     }
 ]
