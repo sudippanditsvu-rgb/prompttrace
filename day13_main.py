@@ -1,36 +1,16 @@
 from storage import load_experiments
+from experiment import calculate_statistics
 
 experiments = load_experiments()
 
+statistics = calculate_statistics(experiments)
+
 print("\n===== PromptTrace Statistics =====")
 
-print("Total Experiments:", len(experiments))
+print("Total Experiments:", statistics["total"])
 
-#average score
-total_score = 0
+print("Average Score:", statistics["average"])
 
-for experiment in experiments:
-    total_score += experiment["score"]
+print("Highest Score:", statistics["highest"])
 
-average_score = total_score / len(experiments)
-
-print("Average Score:", round(average_score, 2))
-
-#higest score
-highest_score = 0
-
-for experiment in experiments:
-    if experiment["score"] > highest_score:
-        highest_score = experiment["score"]
-
-print("Highest Score:", highest_score)
-
-#lowest score 
-
-lowest_score = 10
-
-for experiment in experiments:
-    if experiment["score"] < lowest_score:
-        lowest_score = experiment["score"]
-
-print("Lowest Score:", lowest_score)
+print("Lowest Score:", statistics["lowest"])

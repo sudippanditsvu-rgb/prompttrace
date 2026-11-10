@@ -60,3 +60,38 @@ def show_experiment_history(experiments):
     print("Good Score:", good_score)
 
     print("Needs Improvement:", needs_improvement)
+
+
+def calculate_statistics(experiments):
+
+    total_experiments = len(experiments)
+
+    if total_experiments == 0:
+        return {
+            "total": 0,
+            "average": 0,
+            "highest": 0,
+            "lowest": 0
+        }
+
+    total_score = 0
+
+    for experiment in experiments:
+        total_score += experiment["score"]
+
+    average_score = total_score / total_experiments
+
+    highest_score = max(
+        experiment["score"] for experiment in experiments
+    )
+
+    lowest_score = min(
+        experiment["score"] for experiment in experiments
+    )
+
+    return {
+        "total": total_experiments,
+        "average": round(average_score, 2),
+        "highest": highest_score,
+        "lowest": lowest_score
+    }
