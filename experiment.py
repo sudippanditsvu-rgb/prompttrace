@@ -108,3 +108,12 @@ def find_best_experiment(experiments):
             best_experiment = experiment
 
     return best_experiment
+
+def compare_experiment_scores(experiments):
+
+    for experiment in experiments:
+        print(
+            experiment["prompt_version"],
+            ":",
+            experiment["score"]
+        )
