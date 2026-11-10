@@ -14,3 +14,6 @@ else:
     print("Best Prompt Version:", best_experiment["prompt_version"])
     print("Model:", best_experiment["model"])
     print("Score:", best_experiment["score"])
+    
+    print("Prompt:", best_experiment["prompt"])
+    print("Response:", best_experiment["response"])
