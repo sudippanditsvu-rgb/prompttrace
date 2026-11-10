@@ -95,3 +95,16 @@ def calculate_statistics(experiments):
         "highest": highest_score,
         "lowest": lowest_score
     }
+
+def find_best_experiment(experiments):
+
+    if len(experiments) == 0:
+        return None
+
+    best_experiment = experiments[0]
+
+    for experiment in experiments:
+        if experiment["score"] > best_experiment["score"]:
+            best_experiment = experiment
+
+    return best_experiment
