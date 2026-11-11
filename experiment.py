@@ -117,3 +117,16 @@ def compare_experiment_scores(experiments):
             ":",
             experiment["score"]
         )
+
+def rank_experiments(experiments):
+
+    if len(experiments) == 0:
+        return []
+
+    ranked_experiments = sorted(
+        experiments,
+        key=lambda experiment: experiment["score"],
+        reverse=True
+    )
+
+    return ranked_experiments
