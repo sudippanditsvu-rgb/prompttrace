@@ -1,5 +1,6 @@
 import json
 
+DATA_FILE = "data/experiments.json"
 
 
 def save_experiments(experiments):
@@ -10,6 +11,7 @@ def save_experiments(experiments):
 
     for new_experiment in experiments:
         duplicate = False
+
         for old_experiment in existing_experiments:
             if (
                 old_experiment["prompt_version"]
@@ -21,11 +23,12 @@ def save_experiments(experiments):
         if not duplicate:
             existing_experiments.append(new_experiment)
 
-    with open("experiments.json", "w") as f:
+    with open(DATA_FILE, "w") as f:
         json.dump(existing_experiments, f, indent=4)
 
 
 def load_experiments():
-    with open("experiments.json", "r") as f:
+    with open(DATA_FILE, "r") as f:
         experiments = json.load(f)
+
     return experiments
