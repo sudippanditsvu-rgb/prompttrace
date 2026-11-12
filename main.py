@@ -1,5 +1,6 @@
 
-from storage import load_experiments, save_experiments, update_experiments
+from storage import load_experiments, save_experiments
+from database import delete_experiment_from_db
 
 from experiment import (
     create_experiment,
@@ -176,36 +177,39 @@ def filter_experiments():
         print("Score:", experiment["score"])
         print("Evaluation:", evaluation)
 
+
 def delete_experiment():
 
     print("\n===== Delete Experiment =====")
 
-    prompt_version = input("Enter Prompt Version: ")
+    prompt_version = input("Enter Prompt Version: ").strip()
 
     experiments = load_experiments()
 
-    result = delete_experiment_by_version(
-        experiments,
-        prompt_version
+    exists = any(
+        experiment["prompt_version"] == prompt_version
+        for experiment in experiments
     )
 
-    if result:
+    if not exists:
+        print("\nExperiment Not Found!")
+        return
 
-        confirmation = input(
-            "Are you sure you want to delete this experiment? (yes/no): "
-        )
+    confirmation = input(
+        "Are you sure you want to delete this experiment? (yes/no): "
+    )
 
-        if confirmation.lower() == "yes":
+    if confirmation.lower() == "yes":
 
-            update_experiments(experiments)
+        result = delete_experiment_from_db(prompt_version)
 
+        if result:
             print("\nExperiment", prompt_version, "deleted successfully!")
-
         else:
-            print("\nDeletion cancelled!")
+            print("\nExperiment could not be deleted!")
 
     else:
-        print("\nExperiment Not Found!")
+        print("\nDeletion cancelled!")
 
 
 def main():

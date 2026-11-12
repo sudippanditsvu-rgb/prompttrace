@@ -1,14 +1,25 @@
-def create_experiment(task, prompt, prompt_version, model, response, score):
-    experiment = {
+from datetime import datetime
+
+
+def create_experiment(
+    task,
+    prompt,
+    prompt_version,
+    model,
+    response,
+    score
+):
+
+    return {
         "task": task,
         "prompt": prompt,
         "prompt_version": prompt_version,
         "model": model,
         "response": response,
-        "score": score
+        "score": score,
+        "created_at": datetime.now().isoformat(timespec="seconds")
     }
 
-    return experiment
 
 
 def evaluate_experiments(experiments):
