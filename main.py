@@ -10,50 +10,81 @@ from experiment import (
     find_second_best_experiment,
     find_experiment_by_version,
     filter_experiments_by_evaluation,
-    delete_experiment_by_version
+    delete_experiment_by_version,
+    validate_experiment_details,
+    validate_score
 )
 
 from llm import generate_response
 
 
 
-
-
 def run_new_experiment():
+
     print("\n===== Create New Experiment =====")
 
     task = input("Enter task name: ")
     prompt = input("Enter your prompt: ")
-    prompt_version = input("Enter prompt version (e.g. v5): ")
+    prompt_version = input("Enter prompt version (e.g. v6): ")
 
+    # Validate user input
+    validation_error = validate_experiment_details(
+        task,
+        prompt,
+        prompt_version
+    )
+
+    if validation_error:
+        print("\nError:", validation_error)
+        return
+
+    # Load existing experiments
     experiments = load_experiments()
 
     # Check duplicate prompt version
     for experiment in experiments:
+
         if experiment["prompt_version"] == prompt_version:
-            print("This prompt version already exists!")
+
+            print("\nThis prompt version already exists!")
             return
 
-    # Generate response only once
+    # Generate Gemini response
     print("\nGenerating Gemini response...")
 
-    response = generate_response(prompt)
+    try:
+
+        response = generate_response(prompt)
+
+    except Exception as error:
+
+        print("\nGemini API request failed.")
+        print("Please try again later.")
+        print("Error:", error)
+        return
 
     print("\n===== Gemini Response =====")
     print(response)
 
-    # Rate the generated response
+    # Get user score
     try:
+
         score = int(input("\nRate this response (1-10): "))
 
-        if score < 1 or score > 10:
-            print("Score must be between 1 and 10.")
-            return
-
     except ValueError:
-        print("Please enter a valid number.")
+
+        print("\nPlease enter a valid number.")
         return
 
+    # Validate score
+    validation_error = validate_score(score)
+
+    if validation_error:
+
+        print("\nError:", validation_error)
+        return
+
+    # Create experiment
     new_experiment = create_experiment(
         task,
         prompt,
@@ -63,13 +94,20 @@ def run_new_experiment():
         score
     )
 
+    # Save experiment
     save_experiments([new_experiment])
 
     print("\n===== Experiment Saved =====")
     print("Prompt Version:", prompt_version)
     print("Model: Gemini")
     print("Score:", score)
-    print("Evaluation:", "Good Score" if score >= 7 else "Needs Improvement")
+    print(
+        "Evaluation:",
+        "Good Score" if score >= 7 else "Needs Improvement"
+    )
+
+
+
 
 
 def search_experiment():

@@ -178,3 +178,29 @@ def delete_experiment_by_version(experiments, prompt_version):
             return True
 
     return False
+
+
+
+def validate_experiment_details(task, prompt, prompt_version):
+
+    if not task.strip():
+        return "Task name cannot be empty."
+
+    if not prompt.strip():
+        return "Prompt cannot be empty."
+
+    if not prompt_version.strip():
+        return "Prompt version cannot be empty."
+
+    return None
+
+
+def validate_score(score):
+
+    if not isinstance(score, int):
+        return "Score must be a number."
+
+    if score < 1 or score > 10:
+        return "Score must be between 1 and 10."
+
+    return None
