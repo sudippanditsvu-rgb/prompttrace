@@ -143,3 +143,12 @@ def rank_experiments(experiments):
     )
 
     return ranked_experiments
+
+def find_experiment_by_version(experiments, prompt_version):
+
+    for experiment in experiments:
+
+        if experiment["prompt_version"] == prompt_version:
+            return experiment
+
+    return None

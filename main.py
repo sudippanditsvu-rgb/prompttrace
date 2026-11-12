@@ -7,7 +7,8 @@ from experiment import (
     evaluate_experiments,
     calculate_statistics,
     find_best_experiment,
-    find_second_best_experiment
+    find_second_best_experiment,
+    find_experiment_by_version
 )
 
 from llm import generate_response
@@ -68,6 +69,34 @@ def run_new_experiment():
     print("Score:", score)
     print("Evaluation:", "Good Score" if score >= 7 else "Needs Improvement")
 
+
+def search_experiment():
+
+    print("\n===== Experiment Search =====")
+
+    prompt_version = input("Enter Prompt Version: ")
+
+    experiments = load_experiments()
+
+    result = find_experiment_by_version(
+        experiments,
+        prompt_version
+    )
+
+    if result is not None:
+
+        print("\n===== Search Result =====")
+        print("Prompt Version:", result["prompt_version"])
+        print("Model:", result["model"])
+        print("Score:", result["score"])
+        print(
+            "Evaluation:",
+            "Good Score" if result["score"] >= 7
+            else "Needs Improvement"
+        )
+
+    else:
+        print("\nExperiment Not Found!")
 
 
 def main():
@@ -144,7 +173,8 @@ if __name__ == "__main__":
     print("\n===== Welcome to PromptTrace =====")
     print("1. View Experiment Dashboard")
     print("2. Create New Experiment")
-    print("3. Exit")
+    print("3. Search Experiment")
+    print("4. Exit")
 
     choice = input("\nEnter your choice: ")
 
@@ -155,7 +185,10 @@ if __name__ == "__main__":
         run_new_experiment()
 
     elif choice == "3":
+        search_experiment()
+
+    elif choice == "4":
         print("Thank you for using PromptTrace!")
 
     else:
-        print("Invalid choice. Please select 1, 2, or 3.")
+        print("Invalid choice. Please select 1, 2, 3, or 4.")
