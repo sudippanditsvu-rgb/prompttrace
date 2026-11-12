@@ -16,14 +16,6 @@
         "score": 9
     },
     {
-        "task": "Duplicate Test",
-        "prompt": "Test duplicate prevention",
-        "prompt_version": "v3",
-        "model": "Test",
-        "response": "Testing duplicate prevention",
-        "score": 5
-    },
-    {
         "task": "product sale consaltant",
         "prompt": "please tell me what is the responsbiling in sale consaltant ?",
         "prompt_version": "v4",

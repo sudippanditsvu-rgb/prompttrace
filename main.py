@@ -1,5 +1,5 @@
 
-from storage import load_experiments, save_experiments
+from storage import load_experiments, save_experiments, update_experiments
 
 from experiment import (
     create_experiment,
@@ -9,7 +9,8 @@ from experiment import (
     find_best_experiment,
     find_second_best_experiment,
     find_experiment_by_version,
-    filter_experiments_by_evaluation
+    filter_experiments_by_evaluation,
+    delete_experiment_by_version
 )
 
 from llm import generate_response
@@ -137,6 +138,37 @@ def filter_experiments():
         print("Score:", experiment["score"])
         print("Evaluation:", evaluation)
 
+def delete_experiment():
+
+    print("\n===== Delete Experiment =====")
+
+    prompt_version = input("Enter Prompt Version: ")
+
+    experiments = load_experiments()
+
+    result = delete_experiment_by_version(
+        experiments,
+        prompt_version
+    )
+
+    if result:
+
+        confirmation = input(
+            "Are you sure you want to delete this experiment? (yes/no): "
+        )
+
+        if confirmation.lower() == "yes":
+
+            update_experiments(experiments)
+
+            print("\nExperiment", prompt_version, "deleted successfully!")
+
+        else:
+            print("\nDeletion cancelled!")
+
+    else:
+        print("\nExperiment Not Found!")
+
 
 def main():
     experiments = load_experiments()
@@ -214,7 +246,8 @@ if __name__ == "__main__":
     print("2. Create New Experiment")
     print("3. Search Experiment")
     print("4. Filter Experiments")
-    print("5. Exit")
+    print("5. Delete Experiment")
+    print("6. Exit")
 
     choice = input("\nEnter your choice: ")
 
@@ -231,7 +264,10 @@ if __name__ == "__main__":
         filter_experiments()
 
     elif choice == "5":
+        delete_experiment()
+
+    elif choice == "6":
         print("Thank you for using PromptTrace!")
 
     else:
-        print("Invalid choice. Please select 1, 2, 3, 4, or 5.")
+        print("Invalid choice. Please select 1, 2, 3, 4, 5, or 6.")

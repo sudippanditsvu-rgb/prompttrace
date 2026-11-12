@@ -1,5 +1,7 @@
 import json
 
+
+
 DATA_FILE = "data/experiments.json"
 
 
@@ -32,3 +34,8 @@ def load_experiments():
         experiments = json.load(f)
 
     return experiments
+
+def update_experiments(experiments):
+
+    with open(DATA_FILE, "w") as file:
+        json.dump(experiments, file, indent=4)

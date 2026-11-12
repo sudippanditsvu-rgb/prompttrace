@@ -166,3 +166,15 @@ def filter_experiments_by_evaluation(experiments, evaluation):
             filtered_experiments.append(experiment)
 
     return filtered_experiments
+
+def delete_experiment_by_version(experiments, prompt_version):
+
+    for experiment in experiments:
+
+        if experiment["prompt_version"] == prompt_version:
+
+            experiments.remove(experiment)
+
+            return True
+
+    return False
