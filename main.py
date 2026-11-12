@@ -8,7 +8,8 @@ from experiment import (
     calculate_statistics,
     find_best_experiment,
     find_second_best_experiment,
-    find_experiment_by_version
+    find_experiment_by_version,
+    filter_experiments_by_evaluation
 )
 
 from llm import generate_response
@@ -99,6 +100,44 @@ def search_experiment():
         print("\nExperiment Not Found!")
 
 
+def filter_experiments():
+
+    print("\n===== Filter Experiments =====")
+    print("1. Good Score")
+    print("2. Needs Improvement")
+
+    choice = input("\nSelect filter: ")
+
+    if choice == "1":
+        evaluation = "Good Score"
+
+    elif choice == "2":
+        evaluation = "Needs Improvement"
+
+    else:
+        print("Invalid choice!")
+        return
+
+    experiments = load_experiments()
+
+    filtered_experiments = filter_experiments_by_evaluation(
+        experiments,
+        evaluation
+    )
+
+    print("\n===== Filter Results =====")
+
+    if len(filtered_experiments) == 0:
+        print("No experiments found!")
+        return
+
+    for experiment in filtered_experiments:
+        print("\nPrompt Version:", experiment["prompt_version"])
+        print("Model:", experiment["model"])
+        print("Score:", experiment["score"])
+        print("Evaluation:", evaluation)
+
+
 def main():
     experiments = load_experiments()
 
@@ -174,7 +213,8 @@ if __name__ == "__main__":
     print("1. View Experiment Dashboard")
     print("2. Create New Experiment")
     print("3. Search Experiment")
-    print("4. Exit")
+    print("4. Filter Experiments")
+    print("5. Exit")
 
     choice = input("\nEnter your choice: ")
 
@@ -188,7 +228,10 @@ if __name__ == "__main__":
         search_experiment()
 
     elif choice == "4":
+        filter_experiments()
+
+    elif choice == "5":
         print("Thank you for using PromptTrace!")
 
     else:
-        print("Invalid choice. Please select 1, 2, 3, or 4.")
+        print("Invalid choice. Please select 1, 2, 3, 4, or 5.")

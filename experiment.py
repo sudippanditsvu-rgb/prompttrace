@@ -152,3 +152,17 @@ def find_experiment_by_version(experiments, prompt_version):
             return experiment
 
     return None
+
+def filter_experiments_by_evaluation(experiments, evaluation):
+
+    filtered_experiments = []
+
+    for experiment in experiments:
+
+        if evaluation == "Good Score" and experiment["score"] >= 7:
+            filtered_experiments.append(experiment)
+
+        elif evaluation == "Needs Improvement" and experiment["score"] < 7:
+            filtered_experiments.append(experiment)
+
+    return filtered_experiments
