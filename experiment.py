@@ -109,6 +109,19 @@ def find_best_experiment(experiments):
 
     return best_experiment
 
+def find_second_best_experiment(experiments):
+
+    if len(experiments) < 2:
+        return None
+
+    ranked_experiments = sorted(
+        experiments,
+        key=lambda experiment: experiment["score"],
+        reverse=True
+    )
+
+    return ranked_experiments[1]
+
 def compare_experiment_scores(experiments):
 
     for experiment in experiments:

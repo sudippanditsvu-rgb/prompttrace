@@ -1,12 +1,15 @@
 
 from storage import load_experiments, save_experiments
+
 from experiment import (
     create_experiment,
     rank_experiments,
     evaluate_experiments,
     calculate_statistics,
-    find_best_experiment
+    find_best_experiment,
+    find_second_best_experiment
 )
+
 from llm import generate_response
 
 
@@ -112,11 +115,29 @@ def main():
 
     best_experiment = find_best_experiment(experiments)
 
+    second_best_experiment = find_second_best_experiment(experiments)
+
     print("\n===== Best Experiment =====")
     print("Prompt Version:", best_experiment["prompt_version"])
     print("Model:", best_experiment["model"])
     print("Score:", best_experiment["score"])
 
+    if second_best_experiment is not None:
+
+        score_difference = (
+            best_experiment["score"] - second_best_experiment["score"]
+        )
+
+        print("\n===== Second-Best Experiment =====")
+        print("Prompt Version:", second_best_experiment["prompt_version"])
+        print("Model:", second_best_experiment["model"])
+        print("Score:", second_best_experiment["score"])
+
+        print("\n===== Experiment Comparison =====")
+        print("Score Difference:", score_difference)
+
+    else:
+        print("\nSecond-Best Experiment: Not Available")
 
 if __name__ == "__main__":
 
