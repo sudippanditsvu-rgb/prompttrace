@@ -82,12 +82,25 @@ def main():
 
     print("\n===== Experiment Rankings =====")
 
-    for rank, (experiment, evaluation) in enumerate(zip(ranked_experiments, evaluations), start=1):
-        print(f"\nRank {rank}")
+    previous_score = None
+    current_rank = 0
+
+    for position, (experiment, evaluation) in enumerate(
+        zip(ranked_experiments, evaluations), start=1
+    ):
+
+        score = experiment["score"]
+
+        if score != previous_score:
+            current_rank = position
+
+        print(f"\nRank {current_rank}")
         print("Prompt Version:", experiment["prompt_version"])
         print("Model:", experiment["model"])
-        print("Score:", experiment["score"])
+        print("Score:", score)
         print("Evaluation:", evaluation)
+
+        previous_score = score
 
     statistics = calculate_statistics(experiments)
 
