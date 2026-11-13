@@ -1,3 +1,4 @@
 # PromptTrace dependencies will be added as the project develops.
 google-genai
 python-dotenv
+streamlit
