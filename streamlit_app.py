@@ -1,4 +1,3 @@
-
 import streamlit as st
 
 from storage import load_experiments, save_experiments
@@ -29,46 +28,6 @@ st.set_page_config(
 )
 
 # --------------------------------------------------
-# CUSTOM CSS
-# --------------------------------------------------
-
-st.markdown("""
-<style>
-
-.stApp {
-    background-color: #f5f7fb;
-}
-
-.block-container {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    max-width: 1200px;
-}
-
-[data-testid="stSidebar"] {
-    background-color: #111827;
-}
-
-[data-testid="stSidebar"] * {
-    color: white;
-}
-
-div[data-testid="stMetric"] {
-    background-color: white;
-    padding: 18px;
-    border-radius: 12px;
-    border: 1px solid #e5e7eb;
-}
-
-.stButton button {
-    border-radius: 8px;
-    font-weight: 600;
-}
-
-</style>
-""", unsafe_allow_html=True)
-
-# --------------------------------------------------
 # SESSION STATE
 # --------------------------------------------------
 
@@ -77,6 +36,189 @@ if "pending_experiment" not in st.session_state:
 
 if "save_message" not in st.session_state:
     st.session_state.save_message = None
+
+if "theme_mode" not in st.session_state:
+    st.session_state.theme_mode = "System"
+
+st.sidebar.title("🧪 PromptTrace")
+st.sidebar.caption("Created by Sudip Pandit")
+st.sidebar.caption("GenAI Experiment Workspace")
+
+theme_mode = st.sidebar.selectbox(
+    "Appearance",
+    ["System", "Light", "Dark"],
+    key="theme_mode"
+)
+
+light_variables = """
+    --text-color: #1f2937;
+    --background-color: #f5f7fb;
+    --secondary-background-color: #ffffff;
+    --primary-color: #2563eb;
+    --button-text-color: #ffffff;
+    --border-color: #e5e7eb;
+    --muted-color: #6b7280;
+    color-scheme: light;
+"""
+
+dark_variables = """
+    --text-color: #e5e7eb;
+    --background-color: #0b1220;
+    --secondary-background-color: #111827;
+    --primary-color: #60a5fa;
+    --button-text-color: #0b1220;
+    --border-color: #374151;
+    --muted-color: #9ca3af;
+    color-scheme: dark;
+"""
+
+if theme_mode == "System":
+    theme_variables = f"""
+    .stApp {{
+        {light_variables}
+    }}
+
+    @media (prefers-color-scheme: dark) {{
+        .stApp {{
+            {dark_variables}
+        }}
+    }}
+    """
+else:
+    selected_variables = (
+        dark_variables if theme_mode == "Dark" else light_variables
+    )
+    theme_variables = f".stApp {{ {selected_variables} }}"
+
+# --------------------------------------------------
+# CUSTOM CSS
+# --------------------------------------------------
+
+st.markdown(f"""
+<style>
+
+{theme_variables}
+
+.stApp {{
+    color: var(--text-color);
+    background-color: var(--background-color);
+}}
+
+[data-testid="stHeader"] {{
+    background-color: var(--background-color);
+}}
+
+.block-container {{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    max-width: 1440px;
+}}
+
+[data-testid="stSidebar"] {{
+    background-color: #111827;
+}}
+
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] *,
+[data-testid="stSidebar"] [data-testid="stWidgetLabel"],
+[data-testid="stSidebar"] label[data-testid="stRadioOption"] {{
+    color: #f9fafb;
+}}
+
+div[data-testid="stMetric"] {{
+    background-color: var(--secondary-background-color);
+    padding: 18px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}}
+
+div[data-testid="stMetric"] [data-testid="stMetricLabel"],
+div[data-testid="stMetric"] [data-testid="stMetricValue"] {{
+    color: var(--text-color);
+}}
+
+[data-testid="stMain"] [data-testid="stWidgetLabel"],
+[data-testid="stMain"] [data-testid="stWidgetLabel"] p {{
+    color: var(--text-color) !important;
+}}
+
+[data-testid="stMain"] input:not([type="checkbox"]):not([type="radio"]),
+[data-testid="stMain"] textarea,
+[data-testid="stMain"] [role="combobox"],
+[data-testid="stMain"] div[data-baseweb="input"],
+[data-testid="stMain"] div[data-baseweb="input"] > div,
+[data-testid="stMain"] div[data-baseweb="textarea"],
+[data-testid="stMain"] div[data-baseweb="select"] {{
+    color: var(--text-color) !important;
+    background-color: var(--secondary-background-color) !important;
+    border-color: var(--border-color) !important;
+}}
+
+[data-testid="stMain"] input::placeholder,
+[data-testid="stMain"] textarea::placeholder {{
+    color: var(--muted-color) !important;
+    opacity: 1;
+}}
+
+[data-testid="stMultiSelect"] [role="group"] {{
+    background-color: var(--secondary-background-color) !important;
+    border-color: var(--border-color) !important;
+}}
+
+[data-testid="stMultiSelectTagsContainer"] > span > span {{
+    color: var(--button-text-color) !important;
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}}
+
+[data-testid="stMultiSelectTagsContainer"] button {{
+    color: var(--button-text-color) !important;
+}}
+
+[data-testid="stProgressBarTrack"] {{
+    background-color: var(--border-color) !important;
+}}
+
+[data-testid="stProgressBarTrack"] > div {{
+    background-color: var(--primary-color) !important;
+}}
+
+[role="listbox"] {{
+    color: var(--text-color);
+    background-color: var(--secondary-background-color);
+}}
+
+[role="option"] {{
+    color: var(--text-color);
+}}
+
+div[data-testid="stVerticalBlockBorderWrapper"] {{
+    background-color: var(--secondary-background-color);
+    border-color: var(--border-color);
+}}
+
+[data-testid="stMain"] .stButton button,
+[data-testid="stMain"] button[data-testid^="stBaseButton"] {{
+    border-radius: 8px;
+    font-weight: 600;
+    color: var(--button-text-color) !important;
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}}
+
+[data-testid="stMain"] .stButton button:hover,
+[data-testid="stMain"] button[data-testid^="stBaseButton"]:hover {{
+    filter: brightness(0.95);
+}}
+
+.stApp,
+[data-testid="stSidebar"],
+div[data-testid="stMetric"],
+div[data-testid="stVerticalBlockBorderWrapper"] {{
+    transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+}}
+
+</style>
+""", unsafe_allow_html=True)
 
 # --------------------------------------------------
 # HELPER FUNCTION
@@ -97,35 +239,26 @@ def show_experiment_table(experiments):
         st.info("No experiments found.")
         return
 
-    rows = []
-
     for experiment in experiments:
+        evaluation = (
+            "Good Score"
+            if experiment["score"] >= 7
+            else "Needs Improvement"
+        )
 
-        rows.append({
-            "Version": experiment["prompt_version"],
-            "Task": experiment["task"],
-            "Model": experiment["model"],
-            "Score": experiment["score"],
-            "Evaluation": (
-                "Good Score"
-                if experiment["score"] >= 7
-                else "Needs Improvement"
-            )
-        })
+        with st.container(border=True):
+            version_col, score_col = st.columns([3, 1])
+            version_col.markdown(f'**{experiment["prompt_version"]}**')
+            score_col.markdown(f'**Score: {experiment["score"]}/10**')
 
-    st.dataframe(
-        rows,
-        use_container_width=True,
-        hide_index=True
-    )
+            task_col, model_col, evaluation_col = st.columns([2, 1, 2])
+            task_col.caption(f'Task: {experiment["task"]}')
+            model_col.caption(f'Model: {experiment["model"]}')
+            evaluation_col.caption(evaluation)
 
 # --------------------------------------------------
 # SIDEBAR NAVIGATION
 # --------------------------------------------------
-
-st.sidebar.title("🧪 PromptTrace")
-
-st.sidebar.caption("GenAI Experiment Workspace")
 
 page = st.sidebar.radio(
     "Navigation",
@@ -183,24 +316,20 @@ if page == "Dashboard":
 
     st.divider()
 
-    st.subheader("Experiment Score Overview")
-
     if experiments:
 
-        chart_data = {
-            experiment["prompt_version"]: experiment["score"]
-            for experiment in experiments
-        }
-
-        st.bar_chart(chart_data)
+        for experiment in experiments:
+            score = max(0, min(10, int(experiment["score"])))
+            st.progress(
+                score * 10,
+                text=f'{experiment["prompt_version"]} — {score}/10'
+            )
 
         st.subheader("Experiment Rankings")
 
         ranked = rank_experiments(experiments)
 
         evaluations = evaluate_experiments(ranked)
-
-        rows = []
 
         previous_score = None
         current_rank = 0
@@ -215,21 +344,19 @@ if page == "Dashboard":
             if score != previous_score:
                 current_rank = position
 
-            rows.append({
-                "Rank": current_rank,
-                "Version": experiment["prompt_version"],
-                "Model": experiment["model"],
-                "Score": score,
-                "Evaluation": evaluation
-            })
+            with st.container(border=True):
+                rank_col, version_col, score_col = st.columns([1, 3, 1])
+                rank_col.caption(f"Rank {current_rank}")
+                version_col.markdown(
+                    f'**{experiment["prompt_version"]}**'
+                )
+                score_col.markdown(f"**{score}/10**")
+
+                model_col, evaluation_col = st.columns(2)
+                model_col.caption(f'Model: {experiment["model"]}')
+                evaluation_col.caption(evaluation)
 
             previous_score = score
-
-        st.dataframe(
-            rows,
-            use_container_width=True,
-            hide_index=True
-        )
 
         best = find_best_experiment(experiments)
 
